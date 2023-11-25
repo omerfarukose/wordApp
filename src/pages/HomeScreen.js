@@ -51,6 +51,7 @@ export const HomeScreen = () => {
                     width: wp(100),
                     borderTopLeftRadius: 30,
                     borderTopRightRadius: 30,
+                    paddingTop: hp(3),
                     marginBottom: -hp(10)
                 }}>
 

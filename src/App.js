@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Router } from "./Router/Router"
+import { Router } from './pages/Router/Router';
+
 
 export const App = () => {
 
