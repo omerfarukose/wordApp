@@ -6,22 +6,22 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { MyColors } from "../values/Colors";
 import { WordPairCard } from "../components/card/WordPairCard";
-import { useEffect, useState } from "react";
-import Modal from "react-native-modal";
+import { useContext, useState } from "react";
 import { MyTextInput } from "../components/Input/MyTextInput";
-import { MyButton } from "../components/Button/MyButton";
 import { ContenCard } from "../components/ContentCard";
 import { CreateWordModal } from "../components/Modal/CreateWordModal";
-import { LanguageList, SortTpyeList, SortTpyes } from "../values/SampleData";
+import { LanguageList, SortTpyes } from "../values/SampleData";
 import { SelectLanguageModal } from "../components/Modal/SelectLanguageModal";
+import { CommonContext } from "../contexts/CommonContext";
 
 export const HomeScreen = () => {
+
+    const {selectedLanguage} = useContext(CommonContext);
 
     const [isAddModalVisible, setIsAddModalVisible] = useState(false);
     const [isLanguageModalVisible, setIsLanguageodalVisible] = useState(false);
 
     const [searchValue, setSearchValue] = useState("");
-    const [selectedLanguage, setSelectedLanguage] = useState(LanguageList.at(0));
     const [selecetedSortTypeIndex, setSelectedSortTypeIndex] = useState(0);
 
     const _renderSortType = ( ) => {
@@ -79,7 +79,7 @@ export const HomeScreen = () => {
                                 marginRight: hp(1)
                             }}>
 
-                            { selectedLanguage }
+                            { LanguageList[selectedLanguage] }
 
                         </Text>
 

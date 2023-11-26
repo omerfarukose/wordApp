@@ -5,8 +5,12 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 import { LanguageList } from "../../values/SampleData";
 import Feather from 'react-native-vector-icons/Feather';
 import { MyColors } from "../../values/Colors";
+import { useContext } from "react";
+import { CommonContext } from "../../contexts/CommonContext";
 
 export const SelectLanguageModal = ( props ) => {
+
+    const {setSelectedLanguage} = useContext(CommonContext);
 
     let {isVisible, setIsVisible} = props;
 
@@ -14,13 +18,14 @@ export const SelectLanguageModal = ( props ) => {
 
         return(
             <TouchableOpacity
+                onPress={() => {
+                    setSelectedLanguage(index);
+                    setIsVisible(false);
+                }}
                 style={{
                     marginBottom: hp(1),
                     alignItems: "center",
                     flexDirection: "row",
-                }}
-                onPress={() => {
-
                 }}>
 
                 <Text
