@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View } from "react-native"
+import { Button, Text, TouchableOpacity, View } from "react-native"
 import { MainLayout } from "../components/MainLayout";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import Feather from 'react-native-vector-icons/Feather';
@@ -13,6 +13,7 @@ import { CreateWordModal } from "../components/Modal/CreateWordModal";
 import { LanguageList, SortTpyes } from "../values/SampleData";
 import { SelectLanguageModal } from "../components/Modal/SelectLanguageModal";
 import { CommonContext } from "../contexts/CommonContext";
+import Swiper from 'react-native-deck-swiper'
 
 export const HomeScreen = () => {
 
@@ -41,7 +42,6 @@ export const HomeScreen = () => {
             </TouchableOpacity>
         )
     } 
-
 
     const _renderNavbar = ( ) => {
         return(
@@ -99,13 +99,8 @@ export const HomeScreen = () => {
         )
     }
 
-
-    return(
-        <MainLayout>
-
-            {/* navbar */}   
-            { _renderNavbar() }
-
+    const _renderContent = ( ) => {
+        return(
             <ContenCard
                 style={{
                     paddingTop: hp(3),
@@ -155,10 +150,6 @@ export const HomeScreen = () => {
 
                 </View>
 
-
-
-        
-
                 <WordPairCard
                     firstWord="araba"
                     secondWord="car"/>
@@ -192,6 +183,16 @@ export const HomeScreen = () => {
                 </TouchableOpacity>
 
             </ContenCard> 
+        )
+    }  
+
+    return(
+        <MainLayout>
+
+            {/* navbar */}   
+            { _renderNavbar() }
+
+            { _renderContent() }
 
             <CreateWordModal
                 isVisible={isAddModalVisible}
