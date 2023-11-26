@@ -13,7 +13,6 @@ import { CreateWordModal } from "../components/Modal/CreateWordModal";
 import { LanguageList, SortTpyes } from "../values/SampleData";
 import { SelectLanguageModal } from "../components/Modal/SelectLanguageModal";
 import { CommonContext } from "../contexts/CommonContext";
-import Swiper from 'react-native-deck-swiper'
 
 export const HomeScreen = () => {
 

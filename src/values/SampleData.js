@@ -24,3 +24,19 @@ export const SortTpyes = [
     "sort-numeric-down",
     "sort-numeric-down-alt"
 ]
+
+export const SampleWordList = [
+    "emotion",
+    "cultural",
+    "historical",
+    "value",
+    "vision",
+    "thought",
+    "principle",
+    "purpose",
+    "reason",
+    "situation",
+    "independent",
+    "specific",
+    "important",
+]

@@ -4,6 +4,7 @@ import Swiper from 'react-native-deck-swiper';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import Feather from 'react-native-vector-icons/Feather';
 import { MyColors } from "../values/Colors";
+import { SampleWordList } from "../values/SampleData";
 
 export const QuizScreen = () => {
 
@@ -31,15 +32,46 @@ export const QuizScreen = () => {
     return(
         <MainLayout>
 
-           
             { _renderNavbar() }
 
+            <View
+                style={{
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    paddingHorizontal: hp(3)
+                }}>
+
+                <View
+                    style={{
+                        flexDirection: "row",
+                        gap: hp(1)
+                    }}>
+
+                    <Feather name="chevrons-left" size={30} color="white"/>
+                    <Feather name="frown" size={30} color="white"/>
+
+                </View>
+
+                <View
+                    style={{
+                        flexDirection: "row",
+                        gap: hp(1)
+                    }}>
+
+                    <Feather name="smile" size={30} color="white"/>
+                    <Feather name="chevrons-right" size={30} color="white"/>
+
+                </View>
+
+            </View>
+
             <Swiper
-                cards={['DO', 'MORE', 'OF', 'WHAT', 'MAKES', 'YOU', 'HAPPY']}
+                cards={SampleWordList}
                 onSwiped={(cardIndex) => {console.log(cardIndex)}}
                 onSwipedAll={() => {console.log('onSwipedAll')}}
                 cardIndex={0}
                 stackSize= {3}
+                stackSeparation={25}
                 containerStyle={{
                     backgroundColor: MyColors.mainColor,
                     position: "relative",
@@ -47,6 +79,7 @@ export const QuizScreen = () => {
                     width: '30%',
                     height: '40%'
                 }}
+                verticalSwipe={false}
                 renderCard={(card) => {
                     return (
                         <View 

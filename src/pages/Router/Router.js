@@ -24,8 +24,8 @@ export const Router = () => {
     return(
         <NavigationContainer ref={navigationRef}>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="HomeScreen" component={HomeScreen} />
                 <Stack.Screen name="QuizScreen" component={QuizScreen} />
+                <Stack.Screen name="HomeScreen" component={HomeScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )
