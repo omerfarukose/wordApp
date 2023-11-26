@@ -6,13 +6,13 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { MyColors } from "../values/Colors";
 import { WordPairCard } from "../components/card/WordPairCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "react-native-modal";
 import { MyTextInput } from "../components/Input/MyTextInput";
 import { MyButton } from "../components/Button/MyButton";
 import { ContenCard } from "../components/ContentCard";
 import { CreateWordModal } from "../components/Modal/CreateWordModal";
-import { LanguageList } from "../values/SampleData";
+import { LanguageList, SortTpyeList, SortTpyes } from "../values/SampleData";
 import { SelectLanguageModal } from "../components/Modal/SelectLanguageModal";
 
 export const HomeScreen = () => {
@@ -20,10 +20,28 @@ export const HomeScreen = () => {
     const [isAddModalVisible, setIsAddModalVisible] = useState(false);
     const [isLanguageModalVisible, setIsLanguageodalVisible] = useState(false);
 
-
     const [searchValue, setSearchValue] = useState("");
     const [selectedLanguage, setSelectedLanguage] = useState(LanguageList.at(0));
-    const [selecetedSortType, setSelectedSortType] = useState("date-dec")
+    const [selecetedSortTypeIndex, setSelectedSortTypeIndex] = useState(0);
+
+    const _renderSortType = ( ) => {
+        return(
+            <TouchableOpacity
+                onPress={() => {
+                    setSelectedSortTypeIndex(selecetedSortTypeIndex < 3 ? selecetedSortTypeIndex + 1 : 0)    
+                }}
+                style={{
+                    width: wp(10),
+                    alignItems: "center",
+                    justifyContent: "center"
+                }}>
+
+                <FontAwesome5 name={SortTpyes[selecetedSortTypeIndex]} size={hp(3)} color={MyColors.inputPlaceholderColor}/>
+
+            </TouchableOpacity>
+        )
+    } 
+
 
     const _renderNavbar = ( ) => {
         return(
@@ -133,16 +151,7 @@ export const HomeScreen = () => {
                         
                     </View>
 
-                    <TouchableOpacity
-                        style={{
-                            width: wp(10),
-                            alignItems: "center",
-                            justifyContent: "center"
-                        }}>
-
-                        <FontAwesome5 name="sort-alpha-down" size={hp(3)} color={MyColors.inputPlaceholderColor}/>
-
-                    </TouchableOpacity>
+                    { _renderSortType() }
 
                 </View>
 

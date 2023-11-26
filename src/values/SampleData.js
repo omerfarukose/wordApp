@@ -17,3 +17,10 @@ export const SortTpyeList = [
     "alpha-down",
     "alpha-up",
 ]
+
+export const SortTpyes = [
+    "sort-alpha-down",
+    "sort-alpha-down-alt",
+    "sort-numeric-down",
+    "sort-numeric-down-alt"
+]
