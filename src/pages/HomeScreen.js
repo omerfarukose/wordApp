@@ -12,14 +12,18 @@ import { MyTextInput } from "../components/Input/MyTextInput";
 import { MyButton } from "../components/Button/MyButton";
 import { ContenCard } from "../components/ContentCard";
 import { CreateWordModal } from "../components/Modal/CreateWordModal";
+import { LanguageList } from "../values/SampleData";
+import { SelectLanguageModal } from "../components/Modal/SelectLanguageModal";
 
 export const HomeScreen = () => {
 
     const [isAddModalVisible, setIsAddModalVisible] = useState(false);
-    const [searchValue, setSearchValue] = useState("");
-    const [selectedLanguage, setSelectedLanguage] = useState("English");
-    const [selecetedSortType, setSelectedSortType] = useState("date-dec")
+    const [isLanguageModalVisible, setIsLanguageodalVisible] = useState(false);
 
+
+    const [searchValue, setSearchValue] = useState("");
+    const [selectedLanguage, setSelectedLanguage] = useState(LanguageList.at(0));
+    const [selecetedSortType, setSelectedSortType] = useState("date-dec")
 
     const _renderNavbar = ( ) => {
         return(
@@ -42,6 +46,7 @@ export const HomeScreen = () => {
                     }}>
 
                     <TouchableOpacity
+                        onPress={() => setIsLanguageodalVisible(true)}
                         style={{
                             flexDirection: "row",
                             alignItems: "center",
@@ -182,6 +187,10 @@ export const HomeScreen = () => {
             <CreateWordModal
                 isVisible={isAddModalVisible}
                 setIsVisible={setIsAddModalVisible}/>
+
+            <SelectLanguageModal
+                isVisible={isLanguageModalVisible}
+                setIsVisible={setIsLanguageodalVisible}/>
 
         </MainLayout>
     )
