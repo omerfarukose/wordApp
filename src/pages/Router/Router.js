@@ -20,19 +20,19 @@ export const Router = () => {
         );
     };
 
-    // return(
-    //     <NavigationContainer ref={navigationRef}>
-    //         <Stack.Navigator screenOptions={{ headerShown: false }}>
-    //             <Stack.Screen name="Home" component={HomeScreen} />
-    //         </Stack.Navigator>
-    //     </NavigationContainer>
-    // )
-
-    return (
-        <NavigationContainer>
-          <Drawer.Navigator>
-            <Drawer.Screen name="Article" component={HomeScreen} />
-          </Drawer.Navigator>
+    return(
+        <NavigationContainer ref={navigationRef}>
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="Home" component={HomeScreen} />
+            </Stack.Navigator>
         </NavigationContainer>
-      );
+    )
+
+    // return (
+    //     <NavigationContainer>
+    //       <Drawer.Navigator>
+    //         <Drawer.Screen name="Article" component={HomeScreen} />
+    //       </Drawer.Navigator>
+    //     </NavigationContainer>
+    //   );
 } 

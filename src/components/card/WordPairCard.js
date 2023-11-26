@@ -11,11 +11,10 @@ export const WordPairCard = (props) => {
         <TouchableOpacity
             style={{
                 width: wp(90),
-                height: hp(7),
+                height: hp(5),
                 flexDirection: "row",
-                backgroundColor: "red",
                 alignSelf: "center",
-                borderRadius: 20,
+                borderRadius: 15,
                 marginBottom: hp(1)
             }}>
 
@@ -25,8 +24,8 @@ export const WordPairCard = (props) => {
                     alignItems: "center",
                     justifyContent: "center",
                     backgroundColor: MyColors.secondColor,
-                    borderTopLeftRadius: 20,
-                    borderBottomLeftRadius: 20,
+                    borderTopLeftRadius: 15,
+                    borderBottomLeftRadius: 15,
                 }}>
 
                 <Text
@@ -48,8 +47,8 @@ export const WordPairCard = (props) => {
                     alignItems: "center",
                     justifyContent: "center",
                     backgroundColor: MyColors.mainColor,
-                    borderTopRightRadius: 20,
-                    borderBottomRightRadius: 20,
+                    borderTopRightRadius: 15,
+                    borderBottomRightRadius: 15,
                 }}>
 
                 <Text
