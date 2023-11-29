@@ -1,5 +1,5 @@
 export const MyColors = {
-    mainColor: "#3956D5",
+    mainColor: "#3C6DE0",
     secondColor: "#ADDFF3",
     white: "#FFFFFF",
     inputPlaceholderColor: "#858383"

@@ -6,7 +6,8 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 // screens
 import { HomeScreen } from '../HomeScreen';
 import { navigationRef } from './RootNavigation';
-import { QuizScreen } from '../QuizScreen';
+import { QuizScreen } from '../Quiz/QuizScreen';
+import { QuizResultScreen } from '../Quiz/QuizResultScreen';
 
 export const Router = () => {
 
@@ -24,8 +25,9 @@ export const Router = () => {
     return(
         <NavigationContainer ref={navigationRef}>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-                <Stack.Screen name="QuizScreen" component={QuizScreen} />
                 <Stack.Screen name="HomeScreen" component={HomeScreen} />
+                <Stack.Screen name="QuizResultScreen" component={QuizResultScreen} />
+                <Stack.Screen name="QuizScreen" component={QuizScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )

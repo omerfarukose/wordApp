@@ -110,5 +110,61 @@ export const WordListByLanguage = {
             language: languages.en,
             missValue: 3,
         },
+    ],
+    fr: [
+        {
+            word: "créatif",
+            equivalent: "yaratıcı",
+            language: languages.fr,
+            missValue: 2,
+        },
+        {
+            word: "imagination",
+            equivalent: "hayal gücü",
+            language: languages.fr,
+            missValue: 3,
+        },
+        {
+            word: "logique",
+            equivalent: "mantık",
+            language: languages.fr,
+            missValue: 1,
+        },
+        {
+            word: "esprit",
+            equivalent: "zihin",
+            language: languages.fr,
+            missValue: 0,
+        },
+        {
+            word: "véhicule",
+            equivalent: "araç",
+            language: languages.fr,
+            missValue: 1,
+        },
+        {
+            word: "sentiment",
+            equivalent: "duygu",
+            language: languages.fr,
+            missValue: 5,
+        },
+        {
+            word: "culturel",
+            equivalent: "kültürel",
+            language: languages.fr,
+            missValue: 4,
+        },
+        {
+            word: "principe",
+            equivalent: "ilke",
+            language: languages.fr,
+            missValue: 2,
+        },
+        {
+            word: "significatif",
+            equivalent: "anlamlı",
+            language: languages.fr,
+            missValue: 3,
+        },
     ]
 }

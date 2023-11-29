@@ -1,18 +1,20 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { MainLayout } from "../components/MainLayout";
+import { MainLayout } from "../../components/MainLayout";
 import Swiper from 'react-native-deck-swiper';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import Feather from 'react-native-vector-icons/Feather';
-import { MyColors } from "../values/Colors";
-import { SampleWordList, WordListByLanguage } from "../values/SampleData";
+import { MyColors } from "../../values/Colors";
+import { SampleWordList, WordListByLanguage } from "../../values/SampleData";
 import { useState } from "react";
 
 export const QuizScreen = () => {
 
-    let wordList = WordListByLanguage.en;
+    let wordList = WordListByLanguage.fr;
 
     const [rightList, setRightList] = useState([]);
     const [leftList, setLeftList] = useState([]);
+    const [showCardWiew, setShowCardView] = useState(true);
+
 
     const _renderNavbar = ( ) => {
         return(
@@ -71,11 +73,14 @@ export const QuizScreen = () => {
 
             </View>
 
-            <Swiper
+            {
+                showCardWiew &&
+                <Swiper
                 cards={wordList}
                 onSwipedAll={() => {
                     console.log("right list : ", rightList);
                     console.log("left list : ", leftList);
+                    setShowCardView(false);
                 }}
                 cardIndex={0}
                 stackSize= {3}
@@ -116,6 +121,7 @@ export const QuizScreen = () => {
                 }}>
 
             </Swiper>
+            }
 
         </MainLayout>
     )
