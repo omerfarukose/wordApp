@@ -14,8 +14,11 @@ export const WordPairCard = (props) => {
                 height: hp(5),
                 flexDirection: "row",
                 alignSelf: "center",
-                borderRadius: 15,
-                marginBottom: hp(1)
+                borderRadius: 100,
+                marginBottom: hp(1),
+                backgroundColor: MyColors.white,
+                borderColor: MyColors.mainColor,
+                borderWidth: 1,
             }}>
 
             <View
@@ -23,14 +26,14 @@ export const WordPairCard = (props) => {
                     flex: 1,
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: MyColors.secondColor,
-                    borderTopLeftRadius: 15,
-                    borderBottomLeftRadius: 15,
+                    backgroundColor: MyColors.mainColor,
+                    borderTopLeftRadius: 100,
+                    borderBottomLeftRadius: 100,
                 }}>
 
                 <Text
                     style={{
-                        color: MyColors.mainColor,
+                        color: MyColors.white,
                         fontSize: hp(2),
                         fontWeight: "bold"
                     }}>
@@ -46,16 +49,17 @@ export const WordPairCard = (props) => {
                     flex: 1,
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: MyColors.mainColor,
-                    borderTopRightRadius: 15,
-                    borderBottomRightRadius: 15,
+                    backgroundColor: MyColors.white,
+                    borderTopRightRadius: 100,
+                    borderBottomRightRadius: 100,
                 }}>
 
                 <Text
                     style={{
                         color: "white",
                         fontSize: hp(2),
-                        fontWeight: "bold"
+                        fontWeight: "bold",
+                        color: MyColors.mainColor
                     }}>
 
                     { secondWord } 

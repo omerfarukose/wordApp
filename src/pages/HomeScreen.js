@@ -36,7 +36,7 @@ export const HomeScreen = () => {
                     justifyContent: "center"
                 }}>
 
-                <FontAwesome5 name={SortTpyes[selecetedSortTypeIndex]} size={hp(3)} color={MyColors.inputPlaceholderColor}/>
+                <FontAwesome5 name={SortTpyes[selecetedSortTypeIndex]} size={hp(3)} color={MyColors.border}/>
 
             </TouchableOpacity>
         )
@@ -44,55 +44,101 @@ export const HomeScreen = () => {
 
     const _renderNavbar = ( ) => {
         return(
-            <View
-                style={{
-                    height: hp(10),
-                    flexDirection: "row",
-                    justifyContent: "flex-end",
-                    paddingTop: hp(1),
-                    paddingHorizontal: wp(5)
-                }}>
+            <View>
 
+                {/* change language */}
                 <View
                     style={{
                         width: wp(100),
-                        height: hp(5),
-                        position: "absolute",
                         alignItems: "center",
-                        justifyContent: "center"
+                        marginVertical: hp(2),
                     }}>
 
                     <TouchableOpacity
                         onPress={() => setIsLanguageodalVisible(true)}
                         style={{
+                            width: hp(15),
                             flexDirection: "row",
                             alignItems: "center",
-                            justifyContent: "center"
+                            justifyContent: "center",
+                            backgroundColor: MyColors.border,
+                            height: hp(4),
+                            paddingHorizontal: 15,
+                            borderRadius: 100,
+                            borderColor: MyColors.white,
+                            borderWidth: 1,
                         }}>
 
                         <Text
                             style={{
-                                fontSize: hp(2.3),
+                                fontSize: hp(1.8),
                                 fontWeight: "bold",
-                                color: MyColors.white,
-                                marginRight: hp(1)
+                                color: MyColors.mainColor,
+                                marginRight: hp(1),
                             }}>
 
                             { LanguageList[selectedLanguage] }
 
                         </Text>
 
-                        <FontAwesome5 name="exchange-alt" size={hp(2.5)} color={MyColors.white}/>
+                        <FontAwesome5 name="exchange-alt" size={hp(2)} color={MyColors.mainColor}/>
 
                     </TouchableOpacity>
 
                 </View>
 
-                <TouchableOpacity>
+                {/* search bar */}
+                <View
+                    style={{
+                        flexDirection: "row",
+                        alignItems: "center",
+                        marginLeft: wp(15),
+                        marginBottom: hp(2),
+                        width: wp(100),
+                    }}>
 
-                    <Feather name="menu" size={30} color="white"/>
+                    <View
+                        style={{
+                            width: wp(70),
+                            borderRadius: 100,
+                            borderWidth: 1,
+                            borderColor: "#eceff1",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            paddingRight: hp(2),
+                            backgroundColor: MyColors.white
+                        }}>
 
-                </TouchableOpacity>
+                        <MyTextInput
+                            placeholder={"Search"}
+                            value={searchValue}
+                            setValue={setSearchValue}
+                            inputStyle={{
+                                borderTopLeftRadius: 100,
+                                borderBottomLeftRadius: 100,
+                                backgroundColor: "transparent",
+                                width: wp(60),
+                                height: hp(4),
+                                paddingLeft: 20
+                            }}/>
+
+                        {/* searh button */}
+                        <TouchableOpacity
+                            style={{
+                                
+                            }}
+                            onPress={() => {}}>
+
+                            <Ionicons name="search" size={hp(2.3)} color={MyColors.inputPlaceholderColor}/>
+
+                        </TouchableOpacity>
+                        
+                    </View>
+
+                    {/* { _renderSortType() } */}
+
+                </View>
 
             </View>
         )
@@ -103,51 +149,9 @@ export const HomeScreen = () => {
             <ContenCard
                 style={{
                     paddingTop: hp(3),
-                    height: hp(85)
+                    height: hp(75),
+                    backgroundColor: MyColors.border
                 }}>
-
-                <View
-                    style={{
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        marginBottom: hp(2),
-                        width: wp(90),
-                    }}>
-
-                    <View
-                        style={{
-                            width: wp(80),
-                            borderRadius: 10,
-                            borderWidth: 1,
-                            borderColor: "#eceff1",
-                            flexDirection: "row",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                            paddingRight: hp(2)
-                        }}>
-
-                        <MyTextInput
-                            placeholder={"Search"}
-                            value={searchValue}
-                            setValue={setSearchValue}
-                            inputStyle={{
-                                width: wp(60),
-                            }}/>
-
-                        {/* searh button */}
-                        <TouchableOpacity
-                            onPress={() => {}}>
-
-                            <Ionicons name="search" size={30} color={MyColors.inputPlaceholderColor}/>
-
-                        </TouchableOpacity>
-                        
-                    </View>
-
-                    { _renderSortType() }
-
-                </View>
 
                 <WordPairCard
                     firstWord="araba"

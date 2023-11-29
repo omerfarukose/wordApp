@@ -1,6 +1,8 @@
 export const MyColors = {
     mainColor: "#3C6DE0",
-    secondColor: "#ADDFF3",
+    secondColor: "#96A0E0",
     white: "#FFFFFF",
-    inputPlaceholderColor: "#858383"
+    white: "#FFFFFF",
+    inputPlaceholderColor: "#858383",
+    border: "#EDF3FB"
 } 

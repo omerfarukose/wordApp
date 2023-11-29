@@ -10,7 +10,7 @@ export const ContenCard = (props) => {
     return(
         <View
             style={{
-                backgroundColor: MyColors.white,
+                backgroundColor: MyColors.mainColor,
                 height: height ? height : hp(80),
                 width: wp(100),
                 position: "absolute",
