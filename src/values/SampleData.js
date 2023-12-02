@@ -54,6 +54,15 @@ export const languages = {
     fr: "fr",
 }
 
+export const sampleWordData = {
+    word: "sample",
+    equivalent: "örnek",
+    extraData: "This is a sample of my word !",
+    language: languages.en,
+    correctCount: 3,
+    wrongCount: 2
+}
+
 export const WordListByLanguage = {
     en: [
         {

@@ -4,5 +4,6 @@ export const MyColors = {
     white: "#FFFFFF",
     white: "#FFFFFF",
     inputPlaceholderColor: "#858383",
-    border: "#EDF3FB"
+    border: "#EDF3FB",
+    activeTab: "#032b43",
 } 
